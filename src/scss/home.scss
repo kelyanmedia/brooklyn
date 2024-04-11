@@ -586,6 +586,9 @@
       padding-right: toRem(20);
     }
     max-height: toRem(480);
+    @media (max-width: $mobile) {
+      max-height: toRem(320);
+    }
     overflow: auto;
     @extend %scrollbar;
   }
