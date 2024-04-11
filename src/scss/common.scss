@@ -29,10 +29,10 @@
 }
 
 %scrollbar {
-  & {
-    scrollbar-width: thin;
-    scrollbar-color: #c3ff01 #000;
-  }
+  //   & {
+  //     scrollbar-width: thin;
+  //     scrollbar-color: #c3ff01 #000;
+  //   }
   &::-webkit-scrollbar {
     width: 5px; /* ширина всей полосы прокрутки */
   }
@@ -47,10 +47,10 @@
 }
 
 %scrollbar-light {
-  & {
-    scrollbar-width: thin;
-    scrollbar-color: #fff #000;
-  }
+  //   & {
+  //     scrollbar-width: thin;
+  //     scrollbar-color: #fff #000;
+  //   }
   &::-webkit-scrollbar {
     width: 5px; /* ширина всей полосы прокрутки */
   }
