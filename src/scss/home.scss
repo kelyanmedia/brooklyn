@@ -227,6 +227,10 @@
         @include adaptiveValue("margin-bottom", 15, 10);
       }
     }
+
+    &_small {
+      @include adaptiveValue("font-size", 18, 16);
+    }
   }
 }
 
