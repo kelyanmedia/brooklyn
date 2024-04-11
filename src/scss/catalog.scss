@@ -1,0 +1,88 @@
+.catalog-hero {
+  @include adaptiveValue("padding-bottom", 80, 35);
+  &__container {
+  }
+
+  &__body {
+    display: grid;
+    gap: toRem(20);
+    position: relative;
+
+    border-radius: 20px;
+    background-color: #c3ff01;
+
+    @include adaptiveValue("padding-top", 50, 30);
+    @include adaptiveValue("padding-bottom", 105, 35);
+  }
+
+  &__wrapper {
+    width: 100%;
+    max-width: toRem(1240);
+    padding-left: toRem(15);
+    padding-right: toRem(15);
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: toRem(20);
+    }
+  }
+
+  &__text {
+    max-width: toRem(589);
+  }
+
+  &__image {
+    @media (min-width: $tablet) {
+      z-index: 1;
+      position: absolute;
+      width: 20.8%; /* 323/1550 */
+      height: 108.3%; /* 325/300 */
+      @include adaptiveValue("top", -10, 10, 0, 1580, 991);
+      right: 2.6%; /* 40/1550 */
+    }
+    @media (max-width: $tablet) {
+      position: relative;
+      @include adaptiveValue("width", 400, 290, 0, 767, 375);
+      @include adaptiveValue("height", 400, 290, 0, 767, 375);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &__cap {
+    width: 54.5%; /* 176/323 */
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    img {
+      max-width: 100%;
+    }
+    &_01 {
+      top: 7.1%; /* 23/323 */
+    }
+
+    &_02 {
+      left: 45.2%; /* 146/323 */
+    }
+  }
+
+  &__star {
+    position: absolute;
+    top: 20.4%; /* 66/323 */
+    left: 45.2%; /* 146/323 */
+    width: 22%; /* 71/323 */
+
+    img {
+      max-width: 100%;
+    }
+  }
+}

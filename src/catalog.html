@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <section class="catalog-hero">
+                <div class="catalog-hero__container">
+                    <div class="catalog-hero__body">
+                        <div class="catalog-hero__wrapper">
+                            <h1 class="catalog-hero__title title">Каталог алкогольных напитков</h1>
+                            <div class="catalog-hero__text">
+                                <p>Добро пожаловать в наш каталог, где вы найдете широкий выбор высококачественных продуктов из лучших уголков мира. Ознакомьтесь с нашим каталогом сейчас и сделайте ваш выбор!</p>
+                            </div>
+                        </div>
+                        <div class="catalog-hero__image">
+                            <div class="catalog-hero__cap catalog-hero__cap_01"><img src="@img/catalog-hero/cap01.png" alt="" loading="lazy"></div>
+                            <div class="catalog-hero__cap catalog-hero__cap_02"><img src="@img/catalog-hero/cap02.png" alt="" loading="lazy"></div>
+                            <div class="catalog-hero__star"><img src="@img/catalog-hero/star.svg" alt="" loading="lazy"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="catalog">
+                <div class="catalog__container" data-showmore="items" data-showmore-media="768.98,max">
+                    <div class="catalog__items" data-showmore-content="8">
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Бренди</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/01.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Вермут</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/02.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Вино</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/03.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Виски</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/04.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Водка</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/05.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Джин</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/06.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Игристое вино</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/07.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Коньяк</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/08.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Ликер</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/09.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Пиво</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/10.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Ром</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/11.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Текила</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/12.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Энергетики</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/13.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Безалкого&shy;льные напитки</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/14.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Снеки</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/15.png" alt="" loading="lazy"></div>
+                        </a>
+                        <a href="#" class="catalog__item item-catalog">
+                            <div class="item-catalog__title">Сладости</div>
+                            <div class="item-catalog__image"><img src="@img/catalog/16.png" alt="" loading="lazy"></div>
+                        </a>
+                    </div>
+                    <button hidden data-showmore-button type="button" class="catalog__button button">
+                        <span>Показать еще</span>
+                        <span>Скрыть</span>
+                    </button>
+                </div>
+            </section>
+
+            @@include('html/_line_text.htm',{})
+
+            @@include('html/_location.htm',{})
+
+            @@include('html/_readmore.htm',{})
+
+        </main>
+        @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>
