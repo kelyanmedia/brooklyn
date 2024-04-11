@@ -728,3 +728,92 @@
     @include adaptiveValue("font-size", 18, 16);
   }
 }
+
+//========================================================================================================================================================
+.readmore {
+  @include adaptiveValue("padding-top", 75, 30);
+  @include adaptiveValue("padding-bottom", 75, 30);
+  &__container {
+  }
+
+  &__body {
+    display: grid;
+    gap: toRem(20);
+    grid-template-columns: repeat(2, 1fr);
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__image-ibg {
+    height: fit-content;
+    padding-bottom: percent(415, 764);
+  }
+
+  &__showmore {
+  }
+}
+
+.showmore {
+  display: flex;
+  flex-direction: column;
+
+  &__content {
+    margin-bottom: toRem(15);
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 500;
+      @include adaptiveValue("font-size", 25, 20);
+      line-height: 130%;
+
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 20, 15);
+      }
+    }
+
+    p {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 15, 10);
+      }
+    }
+
+    font-weight: 400;
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 130%;
+  }
+
+  &__more {
+    align-self: flex-start;
+    margin-top: auto;
+    font-weight: 400;
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 130%;
+
+    transition: color 0.3s ease 0s;
+    position: relative;
+    @media (any-hover: hover) {
+      &:hover {
+        color: #c3ff01;
+        &::before {
+          background-color: #c3ff01;
+        }
+      }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: #000;
+      transition: all 0.3s ease 0s;
+    }
+  }
+}
