@@ -210,7 +210,7 @@
 
   &__item {
     font-weight: 400;
-    @include adaptiveValue("font-size", 25, 18);
+    @include adaptiveValue("font-size", 25, 16);
     line-height: 130%;
 
     @media (min-width: $mobile) {
@@ -495,11 +495,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
 
     flex-shrink: 0;
     flex-grow: 0;
     @include adaptiveValue("flex-basis", 150, 100);
+    @include adaptiveValue("height", 150, 100);
 
     img {
       max-width: 100%;
@@ -582,6 +582,9 @@
       margin: toRem(50) 0;
       padding-right: toRem(50);
     }
+    @media (max-width: $tablet) {
+      padding-right: toRem(20);
+    }
     max-height: toRem(480);
     overflow: auto;
     @extend %scrollbar;
@@ -625,5 +628,103 @@
       font-size: toRem(20);
       color: #c3ff01;
     }
+  }
+}
+
+//========================================================================================================================================================
+
+.clients {
+  @include adaptiveValue("padding-top", 75, 30);
+  @include adaptiveValue("padding-bottom", 75, 30);
+  &__container {
+  }
+
+  &__title {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__wrapper {
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+  }
+
+  &__items {
+  }
+
+  &__item {
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+.item-clients {
+}
+
+//========================================================================================================================================================
+
+.brooklyn {
+  @include adaptiveValue("padding-top", 25, 20);
+  @include adaptiveValue("padding-bottom", 75, 30);
+  &__container {
+  }
+
+  &__body {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+
+    padding: toRem(60) toRem(30) toRem(30);
+
+    @media (max-width: $mobile) {
+      padding: toRem(40) toRem(15) toRem(20);
+    }
+  }
+
+  &__bg-ibg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 200, 50);
+    }
+  }
+
+  &__items {
+    display: grid;
+    @include adaptiveValue("gap", 70, 20);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(auto-fill, minmax(toRem(320), 1fr));
+    }
+  }
+
+  &__item {
+  }
+}
+
+.item-brooklyn {
+  line-height: 130%;
+  color: #fff;
+
+  &__title {
+    font-weight: 500;
+    @include adaptiveValue("font-size", 25, 22);
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+
+  &__text {
+    @include adaptiveValue("font-size", 18, 16);
   }
 }
