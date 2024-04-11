@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+
+			<section class="hero">
+				<div class="hero__container">
+					<div class="hero__wrapper">
+						<div class="hero__bg-ibg"><img src="@img/hero/main-bg.jpg" alt="" loading="lazy"></div>
+						<div class="hero__chank"><img src="@img/hero/main-chank.png" alt="" loading="lazy"></div>
+						<h1 class="hero__title">BROOKLYN</h1>
+						<div class="hero__body">
+							<div class="hero__community">Cеть <a href="#" target="_blank">drinksmarket.uz</a></div>
+							<div class="hero__buttons">
+								<button class="hero__button button">Наши бренды</button>
+								<a href="#" class="hero__button button-line">Адреса филиалов</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- <section class="about-hero">
+				<div class="about-hero__container">
+					<div class="about-hero__body">
+						<div class="about-hero__wrapper">
+							<div class="about-hero__bg-ibg"><img src="@img/hero/about.jpg" alt="" loading="lazy"></div>
+							<h1 class="about-hero__title">О НАС</h1>
+							<div class="about-hero__buttons">
+								<a href="#" class="about-hero__button button button_black">Открыть каталог </a>
+								<a href="#" class="about-hero__button button-line button-line_black">Адреса филиалов</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section> -->
+
+			<!--
+				<section class="test">
+					<div class="test__container">
+						<div class="test__body">
+
+						</div>
+					</div>
+				</section>
+			-->
+
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

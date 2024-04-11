@@ -1,0 +1,65 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+//========================================================================================================================================================
+
+// .fancybox__container {
+//     max-width: none;
+// }
+
+//========================================================================================================================================================
+
+.social {
+  display: flex;
+  gap: toRem(8);
+
+  &__item {
+    width: toRem(40);
+
+    transition: transform 0.3s ease 0s;
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+%scrollbar {
+  & {
+    scrollbar-width: thin;
+    scrollbar-color: #c3ff01 #000;
+  }
+  &::-webkit-scrollbar {
+    width: 5px; /* ширина всей полосы прокрутки */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #000; /* цвет зоны отслеживания */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #c3ff01; /* цвет бегунка */
+  }
+}
+
+%scrollbar-light {
+  & {
+    scrollbar-width: thin;
+    scrollbar-color: #fff #000;
+  }
+  &::-webkit-scrollbar {
+    width: 5px; /* ширина всей полосы прокрутки */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #000; /* цвет зоны отслеживания */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #fff; /* цвет бегунка */
+  }
+}

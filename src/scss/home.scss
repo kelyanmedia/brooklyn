@@ -1,0 +1,186 @@
+//====================================================================================================
+
+.hero {
+  &__container {
+  }
+
+  &__wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+
+    @include adaptiveValue("padding-top", 110, 70);
+
+    @media (min-width: $tablet) {
+      @include adaptiveValue("padding-bottom", 195, 100);
+    }
+    @media (max-width: $tablet) {
+      padding-bottom: toRem(30);
+      min-height: toRem(400);
+
+      display: flex;
+      flex-direction: column;
+    }
+    @media (max-width: $pc) {
+      padding-left: toRem(15);
+      padding-right: toRem(15);
+    }
+  }
+
+  &__bg-ibg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__chank {
+    position: absolute;
+    width: 52.3%; /* 811/1550 */
+    height: 100%;
+    top: 2px;
+    left: 0;
+
+    img {
+      max-width: 100%;
+    }
+
+    @media (max-width: $pc) {
+      display: none;
+    }
+  }
+
+  &__title {
+    font-family: "Benzin";
+    font-weight: 400;
+    @include adaptiveValue("font-size", 169, 40);
+    line-height: 100%;
+    color: #c3ff01;
+
+    @media (max-width: $pc) {
+      margin-bottom: toRem(10);
+    }
+    @media (min-width: $pc) {
+      margin-left: toRem(160);
+    }
+  }
+
+  &__body {
+    @media (min-width: $pc) {
+      width: 50%;
+      margin-left: auto;
+    }
+    @media (max-width: $tablet) {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__community {
+    font-family: "Inter Tight";
+    font-weight: 400;
+    @include adaptiveValue("font-size", 35, 20);
+    line-height: 120%;
+    color: #fff;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(50);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: toRem(23);
+
+    @media (max-width: $tablet) {
+      margin-top: auto;
+    }
+    @media (max-width: $mobile) {
+      gap: toRem(10);
+      flex-direction: column;
+    }
+  }
+
+  &__button {
+    &.button-line {
+      @media (max-width: $mobile) {
+        background-color: rgba(196, 255, 1, 0.6);
+        color: #000;
+      }
+    }
+  }
+}
+
+//====================================================================================================
+
+.about-hero {
+  &__container {
+  }
+
+  &__body {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__wrapper {
+    max-width: toRem(1240);
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: toRem(15);
+    padding-right: toRem(15);
+    @include adaptiveValue("padding-top", 144, 70);
+
+    @media (min-width: $mobile) {
+      @include adaptiveValue("padding-bottom", 210, 100);
+    }
+    @media (max-width: $mobile) {
+      padding-bottom: toRem(30);
+      min-height: toRem(350);
+    }
+
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  &__bg-ibg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__title {
+    font-family: Benzin;
+    font-weight: 400;
+    @include adaptiveValue("font-size", 126, 40);
+    line-height: 100%;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: toRem(20);
+
+    @media (max-width: $mobile) {
+      gap: toRem(10);
+      flex-direction: column;
+      margin-top: auto;
+    }
+  }
+
+  &__button {
+  }
+}
