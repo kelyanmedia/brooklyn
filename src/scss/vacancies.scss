@@ -1,0 +1,134 @@
+.vacancies {
+  padding-top: toRem(20);
+  @include adaptiveValue("padding-bottom", 75, 30);
+  &__container {
+  }
+
+  &__title {
+    font-family: Benzin;
+    font-weight: 400;
+    @include adaptiveValue("font-size", 80, 35);
+    line-height: 130%;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__row {
+    display: grid;
+    gap: toRem(20);
+
+    @media (min-width: $mobile) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__text {
+    max-width: toRem(610);
+    font-weight: 400;
+    @include adaptiveValue("font-size", 25, 16);
+    line-height: 130%;
+  }
+
+  &__body {
+    border-radius: 20px;
+
+    background-color: #c3ff01;
+    padding: toRem(60) toRem(20) toRem(60) toRem(30);
+    display: grid;
+    gap: toRem(20);
+
+    @media (min-width: $tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $tablet) {
+      gap: toRem(30);
+    }
+    @media (max-width: $mobile) {
+      padding: toRem(40) toRem(15) toRem(30);
+    }
+  }
+
+  &__form {
+    @media (min-width: $tablet) {
+      max-width: toRem(531);
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: toRem(20);
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__image {
+    max-width: toRem(200);
+
+    @media (max-width: $mobile) {
+      max-width: toRem(150);
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__block {
+    align-self: flex-start;
+    @include adaptiveValue("padding", 20, 15);
+    border-radius: 20px;
+    background-color: #fff;
+  }
+
+  &__description {
+    font-weight: 400;
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 130%;
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 20);
+    }
+
+    p {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 30, 20);
+      }
+    }
+  }
+
+  &__name {
+    text-align: right;
+    max-width: toRem(296);
+    font-size: toRem(16);
+    margin-left: auto;
+  }
+}
+
+.form-contact {
+  &__input {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 20, 10);
+    }
+  }
+
+  &__textarea {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 30, 15);
+    }
+  }
+
+  &__button {
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+  }
+}

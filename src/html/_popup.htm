@@ -1,10 +1,59 @@
 <div id="popup" aria-hidden="true" class="popup">
 	<div class="popup__wrapper">
 		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрити</button>
-			<div class="popup__text">
-				Text
+			<button data-close type="button" class="popup__close"></button>
+
+			<div class="popup__body">
+				<div class="popup__inner">
+					<div class="popup__title title">Свяжитесь с нами, чтобы узнать о наличии</div>
+					<div class="popup__text">
+						<p>Наш менеджер перезвонит вам в течение 5 минут и проконсультирует о любых позициях товара в нашей сети.</p>
+
+						<p>
+							Также вы можете самостоятельно позвонить нам <br>
+							<a href="tel:+9888888888">по телефону горячей линии.</a>
+						</p>
+					</div>
+				</div>
+				<form action="#" class="popup__form form-contact">
+					<input autocomplete="off" type="text" name="form[]" placeholder="Ваше имя" class="form-contact__input input">
+					<input autocomplete="off" type="text" name="form[]" placeholder="Ваш номер телефона" class="form-contact__input input">
+					<button class="form-contact__button button button_black">Перезвоните мне</button>
+				</form>
 			</div>
+
+		</div>
+	</div>
+</div>
+
+<div id="thank" aria-hidden="true" class="popup popup-thank">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"></button>
+
+			<div class="popup__body">
+				<div class="popup__title title">Спасибо за заявку!</div>
+				<div class="popup__text">Наш менеджер перезвонит вам в течение 5 минут и проконсультирует о любых позициях товара в нашей сети.</div>
+				<a href="#" class="popup-thank__button button button_black">Вернуться на главную</a>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<div id="old" aria-hidden="true" class="popup popup-old">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"></button>
+
+			<div class="popup__body">
+				<div class="popup__title title">Возрастное ограничение</div>
+				<div class="popup__text">Информация на сайте предназначена для посетителей старше 21 года. <br> Чтобы получить к нему доступ, подтвердите, что вы достигли совершеннолетия.</div>
+				<div class="popup-old__title">Мне больше 21</div>
+				<button class="popup-old__button button button_black" data-close>Подтверждаю</button>
+			</div>
+
 		</div>
 	</div>
 </div>

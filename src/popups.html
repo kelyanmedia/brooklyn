@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Главная"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <section class="vacancies">
+                <div class="vacancies__container">
+                    <button style="margin: 5px;" class="form-contact__button button" data-popup="#popup">Попап</button>
+                    <button style="margin: 5px;" class="form-contact__button button" data-popup="#thank">Попап Спасибо</button>
+                    <button style="margin: 5px;" class="form-contact__button button" data-popup="#old">Возрастное ограничение</button>
+                </div>
+            </section>
+
+        </main>
+        @@include('html/_footer.htm',{})
+        @@include('html/_popup.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

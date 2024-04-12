@@ -5,14 +5,14 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 0px toRem(30);
+  padding: toRem(5) toRem(30);
 
   font-family: "Montserrat";
   font-weight: 500;
   font-size: toRem(18);
   line-height: 130%;
 
-  height: 43px;
+  min-height: 43px;
 
   border-radius: 10px;
   background-color: #c3ff01;
@@ -43,14 +43,14 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 0px toRem(30);
+  padding: toRem(5) toRem(30);
 
   font-family: "Montserrat";
   font-weight: 500;
   font-size: toRem(18);
   line-height: 130%;
 
-  height: 43px;
+  min-height: 43px;
   color: #fff;
 
   border-radius: 10px;
