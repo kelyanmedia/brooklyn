@@ -1,0 +1,242 @@
+.blog {
+  @include adaptiveValue("padding-top", 50, 25);
+  @include adaptiveValue("padding-bottom", 50, 25);
+  &__container {
+    max-width: toRem(1230);
+  }
+
+  &__maintitle {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 70, 30);
+    }
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(toRem(340), 1fr));
+    @include adaptiveValue("gap", 30, 20);
+
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 50, 30);
+    }
+  }
+
+  &__item {
+  }
+
+  &__button {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+.item-blog {
+  border-radius: 20px;
+  background-color: #000;
+  padding: toRem(20);
+
+  font-weight: 400;
+  font-size: toRem(16);
+  line-height: 130%;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+
+  &__image-ibg {
+    padding-bottom: percent(210, 340);
+    overflow: hidden;
+    display: block;
+
+    &:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+    img {
+      transition: transform 0.3s ease 0s;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 110%;
+    margin-bottom: toRem(10);
+
+    color: #c3ff01;
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
+  &__date {
+    margin-bottom: toRem(10);
+
+    color: #c3ff01;
+  }
+
+  &__text {
+    flex: 1 1 auto;
+    margin-bottom: toRem(10);
+  }
+
+  &__link {
+    align-self: flex-start;
+    margin-top: auto;
+
+    color: #c3ff01;
+    @media (any-hover: hover) {
+      &:hover {
+        &::before {
+          width: 80%;
+          left: 10%;
+        }
+      }
+    }
+
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      bottom: 0;
+      left: 0;
+      background-color: #c3ff01;
+      transition: all 0.3s ease 0s;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.blog-article {
+  @include adaptiveValue("padding-top", 30, 25);
+  @include adaptiveValue("padding-bottom", 50, 25);
+  &__container {
+    max-width: toRem(730);
+  }
+
+  img {
+    border-radius: 20px;
+    overflow: hidden;
+    display: block;
+    max-width: 100%;
+    @include adaptiveValue("margin-bottom", 20, 15);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 400;
+    @include adaptiveValue("font-size", 25, 22);
+    line-height: 110%;
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 27, 20);
+    }
+  }
+
+  font-weight: 400;
+  @include adaptiveValue("font-size", 18, 16);
+  line-height: 130%;
+
+  p,
+  div,
+  ul,
+  ol,
+  li {
+    &:not(:last-child) {
+      @include adaptiveValue("margin-bottom", 20, 15);
+    }
+  }
+
+  &__date {
+    font-size: toRem(14);
+    line-height: 107%;
+    margin-bottom: toRem(20);
+  }
+}
+
+//========================================================================================================================================================
+
+.submit {
+  @include adaptiveValue("padding-top", 50, 25);
+  @include adaptiveValue("padding-bottom", 50, 25);
+  &__container {
+  }
+
+  &__body {
+    border-radius: toRem(20);
+    @include adaptiveValue("padding-top", 60, 40);
+    @include adaptiveValue("padding-bottom", 90, 40);
+    @include adaptiveValue("padding-left", 70, 15, 0, 1550, 767);
+    @include adaptiveValue("padding-right", 70, 15, 0, 1550, 767);
+
+    display: flex;
+    gap: toRem(50);
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      gap: toRem(30);
+    }
+    background-color: #c3ff01;
+  }
+
+  &__title {
+    max-width: toRem(650);
+    margin-bottom: toRem(20);
+  }
+
+  &__text {
+    font-weight: 400;
+    @include adaptiveValue("font-size", 18, 16);
+    line-height: 130%;
+    max-width: toRem(630);
+
+    br {
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+
+    p {
+      &:not(:last-child) {
+        @include adaptiveValue("margin-bottom", 20, 15);
+      }
+    }
+    a {
+      font-weight: 500;
+      text-decoration: underline;
+    }
+  }
+
+  &__inner {
+  }
+
+  &__form {
+    @media (min-width: $tablet) {
+      padding-top: toRem(100);
+      flex: 0 0 37.6%; /* 530/1410 */
+    }
+
+    button {
+      margin-top: toRem(20);
+      min-width: toRem(300);
+    }
+  }
+}

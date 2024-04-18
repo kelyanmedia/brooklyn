@@ -154,6 +154,7 @@ body {
 @import "home";
 @import "catalog";
 @import "vacancies";
+@import "blog";
 
 .page {
   // padding-top: var(--header-height);
@@ -163,5 +164,13 @@ body {
   }
   @media (max-width: $tablet) {
     @include adaptiveValue("padding-top", 105, 90, 0, 991.98, 767.98);
+  }
+  &.no-space {
+    @media (min-width: $tablet) {
+      padding-top: 0;
+    }
+    @media (max-width: $tablet) {
+      padding-top: 0;
+    }
   }
 }

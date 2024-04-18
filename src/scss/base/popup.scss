@@ -101,6 +101,12 @@ body::after {
     line-height: 130%;
     max-width: toRem(630);
 
+    br {
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+
     p {
       &:not(:last-child) {
         @include adaptiveValue("margin-bottom", 20, 15);

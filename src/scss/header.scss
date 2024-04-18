@@ -27,8 +27,20 @@
     }
   }
 
+  &.header_white::before {
+    @media (max-width: $tablet) {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+
   &._header-scroll {
     background-color: rgba(255, 255, 255, 0.9);
+
+    &.header_white {
+      @media (max-width: $tablet) {
+        background-color: rgba(0, 0, 0, 0.9);
+      }
+    }
   }
   &__container {
     max-width: toRem(1240);
@@ -80,6 +92,9 @@
   }
 
   &__menu {
+    @media (min-width: $tablet) {
+      margin-top: toRem(10);
+    }
   }
 
   &__language {
@@ -242,9 +257,11 @@
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
 
-    @include adaptiveValue("gap", 29, 15, 0, 1240, 767);
+    row-gap: toRem(5);
+    @include adaptiveValue("column-gap", 29, 15, 0, 1240, 767);
 
     @media (max-width: $tablet) {
       flex-direction: column;
@@ -447,6 +464,12 @@
       width: 100%;
       height: toRem(2);
       background-color: #000;
+
+      .header_white & {
+        @media (max-width: $tablet) {
+          background-color: #fff;
+        }
+      }
     }
     &::before {
       top: 0;

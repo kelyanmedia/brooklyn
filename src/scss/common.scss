@@ -68,7 +68,7 @@
 
 .title {
   font-family: Benzin;
-  font-weight: 400;
+  font-weight: 500;
   @include adaptiveValue("font-size", 40, 25);
   line-height: 130%;
 
@@ -76,5 +76,35 @@
 
   &_white {
     color: #fff;
+  }
+}
+
+//========================================================================================================================================================
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: toRem(5);
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    border: 1px solid #c3ff01;
+    background-color: #fff;
+
+    transition: all 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #c3ff01;
+      }
+    }
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #c3ff01;
   }
 }

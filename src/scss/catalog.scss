@@ -142,15 +142,16 @@
     overflow: hidden;
     background-color: #c3ff01;
 
-    @include adaptiveValue("padding-top", 60, 30);
-    @include adaptiveValue("padding-bottom", 90, 45);
+    @include adaptiveValue("padding-top", 50, 30);
+    @include adaptiveValue("padding-bottom", 40, 82);
 
-    @media (min-width: $tablet) {
-      min-height: toRem(424);
+    min-height: toRem(300);
+    @media (max-width: $mobile) {
+      border-radius: 0 0 10px 10px;
+      margin-left: toRem(-15);
+      margin-right: toRem(-15);
+      min-height: toRem(400);
     }
-
-    display: flex;
-    align-items: center;
   }
 
   &__wrapper {
@@ -166,8 +167,9 @@
   }
 
   &__title {
+    font-size: toRem(40);
     &:not(:last-child) {
-      margin-bottom: toRem(10);
+      margin-bottom: toRem(20);
     }
   }
 
@@ -175,10 +177,10 @@
     font-weight: 400;
     @include adaptiveValue("font-size", 18, 16);
     line-height: 130%;
-    max-width: toRem(565);
+    max-width: toRem(610);
 
     &:not(:last-child) {
-      @include adaptiveValue("margin-bottom", 30, 25);
+      @include adaptiveValue("margin-bottom", 30, 50);
     }
 
     p {
@@ -196,9 +198,21 @@
     left: 0;
   }
 
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(10);
+  }
+
   &__button {
-    @media (max-width: $mobile) {
-      width: 100%;
+    @media (max-width: $tablet) {
+      background-color: #fff;
+      color: #000;
+
+      &.button-line {
+        background-color: #000;
+        color: #fff;
+      }
     }
   }
 

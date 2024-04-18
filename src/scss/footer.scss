@@ -1,8 +1,10 @@
 //====================================================================================================
 
 .footer {
-  padding-bottom: toRem(10);
   padding-top: toRem(20);
+  @media (min-width: $tablet) {
+    padding-bottom: toRem(10);
+  }
   &__container {
   }
 
@@ -23,7 +25,10 @@
 
     @media (max-width: $tablet) {
       flex-direction: column;
-      gap: toRem(30);
+      gap: toRem(5);
+      margin-left: toRem(-15);
+      margin-right: toRem(-15);
+      border-radius: 10px 10px 0 0;
     }
   }
 
@@ -37,6 +42,12 @@
         }
       }
     }
+
+    @media (max-width: $tablet) {
+      &:last-child {
+        margin-top: toRem(45);
+      }
+    }
   }
 
   &__title {
@@ -46,9 +57,54 @@
     line-height: 130%;
 
     color: #000;
+    @media (max-width: $tablet) {
+      width: 100%;
+    }
+
+    &[data-spoller] {
+      &::after {
+        content: "\e900";
+        @extend %ic;
+        @include adaptiveValue("font-size", 18, 16);
+        display: none;
+        transition: transform 0.3s ease 0s;
+      }
+      &._spoller-active::after {
+        transform: rotate(180deg);
+      }
+
+      @media (max-width: $tablet) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: toRem(10);
+        border-bottom: 1px solid #000;
+        &::after {
+          display: block;
+        }
+      }
+    }
 
     &:not(:last-child) {
-      margin-bottom: toRem(20);
+      @media (min-width: $tablet) {
+        margin-bottom: toRem(20);
+      }
+      @media (max-width: $tablet) {
+        margin: 5px 0;
+      }
+    }
+
+    &_hide {
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
+  }
+
+  &__wrapper {
+    @media (max-width: $tablet) {
+      padding-top: toRem(10);
+      padding-bottom: toRem(10);
     }
   }
 
@@ -57,10 +113,6 @@
     gap: toRem(10);
     @media (min-width: $tablet) {
       gap: toRem(20);
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: $mobile) {
       grid-template-columns: repeat(2, 1fr);
     }
   }
@@ -103,6 +155,9 @@
   }
 
   &__social {
+    @media (max-width: $tablet) {
+      justify-content: center;
+    }
   }
 }
 

@@ -6,14 +6,19 @@
 
 <body>
 	<div class="wrapper">
-		@@include('html/_header.htm',{})
-		<main class="page">
+		@@include('html/_header_white.htm',{})
+		<main class="page no-space">
 
 			<section class="hero">
 				<div class="hero__container">
 					<div class="hero__wrapper">
-						<div class="hero__bg-ibg"><img src="@img/hero/main-bg.jpg" alt="" loading="lazy"></div>
-						<div class="hero__chank"><img src="@img/hero/main-chank.png" alt="" loading="lazy"></div>
+						<div class="hero__bg-ibg">
+							<picture>
+								<source srcset="@img/hero/main-bg-mob.jpg" type="image/webp" media="(max-width:991px)">
+								<source srcset="@img/hero/main-bg.jpg" type="image/webp">
+								<img src="@img/hero/main-bg.jpg" alt="">
+							</picture>
+						</div>
 						<h1 class="hero__title">BROOKLYN</h1>
 						<div class="hero__body">
 							<div class="hero__community">Cеть <a href="#" target="_blank">drinksmarket.uz</a></div>
@@ -30,24 +35,27 @@
 			<section class="text-block">
 				<div class="text-block__container">
 					<div class="text-block__items">
-						<div class="text-block__item">
-							<p>BROOKLYN - ваш надёжный партнёр в мире высококачественных алкогольных напитков</p>
+						<div class="text-block__wrapper swiper-wrapper">
+							<div class="text-block__item swiper-slide">
+								<p>BROOKLYN - ваш надёжный партнёр в мире высококачественных алкогольных напитков</p>
+							</div>
+							<div class="text-block__item swiper-slide">
+								<p>Наша цель - предоставить вам широкий выбор изысканных вин, крепких напитков, пива
+									и многое другое.</p>
+							</div>
+							<div class="text-block__item swiper-slide">
+								<p>Мы предлагает выгодные цены и акции, что делает покупку в Brooklyn еще более привлекательной. </p>
+							</div>
 						</div>
-						<div class="text-block__item">
-							<p>Наша цель - предоставить вам широкий выбор изысканных вин, крепких напитков, пива
-								и многое другое.</p>
-						</div>
-						<div class="text-block__item">
-							<p>Мы предлагает выгодные цены и акции, что делает покупку в Brooklyn еще более привлекательной. </p>
-						</div>
+						<div class="text-block__pagination pagination"></div>
 					</div>
 				</div>
 			</section>
 
-			<section class="cards">
+			<section class="cards cards_pc">
 				<div class="cards__container">
 					<div class="cards__items" data-iso-items>
-						<div class="cards__image-ibg" data-iso-item><img src="@img/cards/01.jpg" alt="" loading="lazy"></div>
+						<div class="cards__image-ibg" data-iso-item><img src="@img/cards/08.jpg" alt="" loading="lazy"></div>
 						<div class="cards__item item-cards" data-iso-item>
 							<div class="item-cards__wrapper">
 								<div class="item-cards__image"><img src="@img/cards/cat.png" alt="" loading="lazy"></div>
@@ -61,8 +69,26 @@
 						<div class="cards__image-ibg" data-iso-item><video autoplay loop muted playsinline src="files/video01.mp4" alt="" loading="lazy"></video></div>
 						<div class="cards__image-ibg" data-iso-item><img src="@img/cards/02.jpg" alt="" loading="lazy"></div>
 					</div>
+					<div class="cards__items cards__items_mob">
+						<div class="cards__item item-cards">
+							<div class="item-cards__wrapper item-cards__wrapper_image">
+								<div class="item-cards__image"><img src="@img/cards/cat.png" alt="" loading="lazy"></div>
+								<div class="item-cards__inner">
+									<div class="item-cards__goute">
+										<p>Мы убеждены, что каждый должен иметь доступ
+											к качественным напиткам, независимо от своих предпочтений или бюджета</p>
+									</div>
+									<div class="item-cards__place">Специалист по вдохновению сети, кот BROOK-Акя</div>
+								</div>
+							</div>
+						</div>
+						<div class="cards__image-ibg"><img src="@img/cards/08.jpg" alt="" loading="lazy"></div>
+						<div class="cards__image-ibg"><video autoplay loop muted playsinline src="files/video01.mp4" alt="" loading="lazy"></video></div>
+					</div>
 				</div>
 			</section>
+
+
 
 			@@include('html/_catalog.htm',{})
 
@@ -70,18 +96,43 @@
 
 			@@include('html/_location.htm',{})
 
+			<section class="cards cards_mob">
+				<div class="cards__container">
+					<div class="cards__items cards__items_mob">
+						<div class="cards__item item-cards">
+							<div class="item-cards__wrapper item-cards__wrapper_image">
+								<div class="item-cards__image"><img src="@img/cards/cat.png" alt="" loading="lazy"></div>
+								<div class="item-cards__inner">
+									<div class="item-cards__goute">
+										<p>Мы убеждены, что каждый должен иметь доступ
+											к качественным напиткам, независимо от своих предпочтений или бюджета</p>
+									</div>
+									<div class="item-cards__place">Специалист по вдохновению сети, кот BROOK-Акя</div>
+								</div>
+							</div>
+						</div>
+						<div class="cards__image-ibg"><img src="@img/cards/08.jpg" alt="" loading="lazy"></div>
+						<div class="cards__image-ibg"><video autoplay loop muted playsinline src="files/video01.mp4" alt="" loading="lazy"></video></div>
+					</div>
+				</div>
+			</section>
+
 			<section class="text-block">
 				<div class="text-block__container">
-					<div class="text-block__items">
-						<div class="text-block__item">
-							<p>Мы гордимся своими продуктами и стремимся к высочайшему качеству.</p>
+					<div class="text-block__items ">
+						<div class="text-block__wrapper swiper-wrapper">
+							<div class="text-block__item swiper-slide">
+								<p>Мы гордимся своими <br> продуктами и стремимся
+									к высочайшему качеству.</p>
+							</div>
+							<div class="text-block__item swiper-slide">
+								<p>Весь алкоголь проходит строгий отбор и проверку на соответствие стандартам качества.</p>
+							</div>
+							<div class="text-block__item swiper-slide">
+								<p>Мы уверены в качестве наших товаров и предлагаем гарантию на каждую покупку. </p>
+							</div>
 						</div>
-						<div class="text-block__item">
-							<p>Весь алкоголь проходит строгий отбор и тщательную проверку на соответствие стандартам качества.</p>
-						</div>
-						<div class="text-block__item">
-							<p>Мы уверены в качестве наших товаров и предлагаем гарантию на каждую покупку.</p>
-						</div>
+						<div class="text-block__pagination pagination"></div>
 					</div>
 				</div>
 			</section>

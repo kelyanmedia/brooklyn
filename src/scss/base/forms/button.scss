@@ -5,14 +5,17 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: toRem(5) toRem(30);
+  padding-top: toRem(5);
+  padding-bottom: toRem(5);
+  @include adaptiveValue("padding-left", 30, 20, 0, 1580, 767);
+  @include adaptiveValue("padding-right", 30, 20, 0, 1580, 767);
 
   font-family: "Montserrat";
   font-weight: 500;
-  font-size: toRem(18);
+  @include adaptiveValue("font-size", 18, 16);
   line-height: 130%;
 
-  min-height: 43px;
+  @include adaptiveValue("min-height", 43, 41);
 
   border-radius: 10px;
   background-color: #c3ff01;
@@ -43,14 +46,17 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: toRem(5) toRem(30);
+  padding-top: toRem(5);
+  padding-bottom: toRem(5);
+  @include adaptiveValue("padding-left", 30, 20, 0, 1580, 767);
+  @include adaptiveValue("padding-right", 30, 20, 0, 1580, 767);
 
   font-family: "Montserrat";
   font-weight: 500;
-  font-size: toRem(18);
+  @include adaptiveValue("font-size", 18, 16);
   line-height: 130%;
 
-  min-height: 43px;
+  @include adaptiveValue("min-height", 43, 41);
   color: #fff;
 
   border-radius: 10px;

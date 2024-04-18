@@ -9,33 +9,40 @@
         @@include('html/_header.htm',{})
         <main class="page">
 
-            <section class="about-hero">
-                <div class="about-hero__container">
-                    <div class="about-hero__body">
-                        <div class="about-hero__wrapper">
-                            <div class="about-hero__bg-ibg"><img src="@img/hero/about.jpg" alt="" loading="lazy"></div>
-                            <h1 class="about-hero__title">О НАС</h1>
-                            <div class="about-hero__buttons">
-                                <a href="#" class="about-hero__button button button_black">Открыть каталог </a>
-                                <a href="#" class="about-hero__button button-line button-line_black">Адреса филиалов</a>
+            <section class="secondary-hero">
+                <div class="secondary-hero__container">
+                    <div class="secondary-hero__body">
+                        <div class="secondary-hero__wrapper">
+                            <h1 class="secondary-hero__title title">О нас </h1>
+                            <div class="secondary-hero__text">
+                                <p> Мы гордимся своей дружной и профессиональной командой, которая стремится к обеспечению высочайшего уровня сервиса и удовлетворения потребностей каждого клиента.</p>
+                            </div>
+                            <div class="secondary-hero__buttons">
+                                <a href="#" class="secondary-hero__button button button_black">Открыть каталог </a>
+                                <button class="secondary-hero__button button-line button-line_black">Адреса магазинов</button>
                             </div>
                         </div>
+                        <div class="secondary-hero__bg-ibg"><img src="@img/secondary-hero/03.jpg" alt="" loading="lazy"></div>
                     </div>
+
                 </div>
             </section>
 
             <section class="text-block">
                 <div class="text-block__container">
-                    <div class="text-block__items">
-                        <div class="text-block__item">
-                            <p>Команда сети магазинов Brooklyn придерживается определенных ценностей</p>
+                    <div class="text-block__items ">
+                        <div class="text-block__wrapper swiper-wrapper">
+                            <div class="text-block__item swiper-slide">
+                                <p>Команда сети магазинов Brooklyn придерживается определенных ценностей</p>
+                            </div>
+                            <div class="text-block__item swiper-slide">
+                                <p>Эти ценности и правила формируют основу нашего бизнеса и наших отношений с клиентами</p>
+                            </div>
+                            <div class="text-block__item swiper-slide">
+                                <p>Они направляют нас в работе и отражают наше стремление к качеству и честности </p>
+                            </div>
                         </div>
-                        <div class="text-block__item">
-                            <p>Эти ценности и правила формируют основу нашего бизнеса и наших отношений с клиентами</p>
-                        </div>
-                        <div class="text-block__item">
-                            <p>Они направляют нас в работе и отражают наше стремление к качеству, честности и удовлетворению клиентов</p>
-                        </div>
+                        <div class="text-block__pagination pagination"></div>
                     </div>
                 </div>
             </section>
@@ -55,7 +62,7 @@
                         </div>
                         <div class="cards__image-ibg" data-iso-item><video autoplay loop muted playsinline src="files/video01.mp4" alt="" loading="lazy"></video></div>
                         <div class="cards__image-ibg" data-iso-item><img src="@img/cards/03.jpg" alt="" loading="lazy"></div>
-                        <div class="cards__item item-cards" data-iso-item>
+                        <div class="cards__item item-cards item-cards_line" data-iso-item>
                             <div class="item-cards__wrapper">
                                 <div class="item-cards__num">№2</div>
                                 <div class="item-cards__title">Профессионализм и честность</div>
@@ -88,6 +95,48 @@
                         <div class="cards__image-ibg" data-iso-item><img src="@img/cards/07.jpg" alt="" loading="lazy"></div>
                         <div class="cards__image-ibg cards__image-ibg_hide" data-iso-item><img src="@img/cards/06.jpg" alt="" loading="lazy"></div>
                     </div>
+                    <div class="cards__items cards__items_mob">
+                        <div class="cards__image-ibg"><img src="@img/cards/01.jpg" alt="" loading="lazy"></div>
+                        <div class="cards__image-ibg"><video autoplay loop muted playsinline src="files/video02.mp4" alt="" loading="lazy"></video></div>
+                        <div class="cards__item item-cards">
+                            <div class="item-cards__wrapper">
+                                <div class="item-cards__num">№1</div>
+                                <div class="item-cards__title">Качество превыше всего</div>
+                                <div class="item-cards__text">
+                                    <p>Мы стремимся к предоставлению только лучших алкогольных напитков, которые отвечают высочайшим стандартам качества. Каждый товар прошел строгий отбор, чтобы гарантировать вам непревзойденный вкус и удовольствие от каждого глотка</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cards__item item-cards item-cards_line">
+                            <div class="item-cards__wrapper">
+                                <div class="item-cards__num">№2</div>
+                                <div class="item-cards__title">Профессионализм и честность</div>
+                                <div class="item-cards__text">
+                                    <p>Мы ценим доверие наших клиентов, поэтому мы всегда действуем профессионально и честно. Наша команда экспертов готова поделиться своими знаниями и помочь вам сделать правильный выбор, учитывая ваши предпочтения и бюджет.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cards__image-ibg"><img src="@img/cards/03.jpg" alt="" loading="lazy"></div>
+                        <div class="cards__image-ibg"><img src="@img/cards/05.jpg" alt="" loading="lazy"></div>
+                        <div class="cards__item item-cards item-cards_line">
+                            <div class="item-cards__wrapper">
+                                <div class="item-cards__num">№3</div>
+                                <div class="item-cards__title">Клиенто-ориентированность</div>
+                                <div class="item-cards__text">
+                                    <p>Ваше удовлетворение - наша главная цель. Мы всегда стремимся превзойти ваши ожидания и предоставить вам выдающийся сервис, начиная от широкого выбора до индивидуального подхода к каждому клиенту. Ваш опыт покупок у нас должен быть приятным и беззаботным.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cards__item item-cards">
+                            <div class="item-cards__wrapper">
+                                <div class="item-cards__num">№4</div>
+                                <div class="item-cards__title">Ответственное потребление</div>
+                                <div class="item-cards__text">
+                                    <p>Мы поддерживаем ответственное потребление алкоголя и всегда призываем наших клиентов употреблять напитки с умом и умеренностью. Мы следуем законам и рекомендациям по продаже алкоголя и строго не рекламируем его употребление лицам моложе законного возраста.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -98,16 +147,20 @@
 
             <section class="text-block">
                 <div class="text-block__container">
-                    <div class="text-block__items">
-                        <div class="text-block__item">
-                            <p>Мы гордимся своими продуктами и стремимся к высочайшему качеству.</p>
+                    <div class="text-block__items ">
+                        <div class="text-block__wrapper swiper-wrapper">
+                            <div class="text-block__item swiper-slide">
+                                <p>Мы гордимся своими <br> продуктами и стремимся
+                                    к высочайшему качеству.</p>
+                            </div>
+                            <div class="text-block__item swiper-slide">
+                                <p>Весь алкоголь проходит строгий отбор и проверку на соответствие стандартам качества.</p>
+                            </div>
+                            <div class="text-block__item swiper-slide">
+                                <p>Мы уверены в качестве наших товаров и предлагаем гарантию на каждую покупку. </p>
+                            </div>
                         </div>
-                        <div class="text-block__item text-block__item_small">
-                            <p>Весь алкоголь, представленный в наших магазинах, проходит строгий отбор и тщательную проверку на соответствие стандартам качества.</p>
-                        </div>
-                        <div class="text-block__item text-block__item_small">
-                            <p>Мы уверены в качестве наших товаров и предлагаем гарантию на каждую покупку.</p>
-                        </div>
+                        <div class="text-block__pagination pagination"></div>
                     </div>
                 </div>
             </section>

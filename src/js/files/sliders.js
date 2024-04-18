@@ -8,7 +8,7 @@
 // При необхідності підключаємо додаткові модулі слайдера, вказуючи їх у {} через кому
 // Приклад: { Navigation, Autoplay }
 import Swiper from "swiper"
-import { Autoplay } from "swiper/modules"
+import { Autoplay, Pagination } from "swiper/modules"
 /*
 Основні модулі слайдера:
 Navigation, Pagination, Autoplay,
@@ -177,6 +177,56 @@ function initSliders() {
         },
       },
     })
+  }
+
+  for (const mobileSlider of document.querySelectorAll(".text-block__items")) {
+    if (mobileSlider) {
+      ;(function () {
+        "use strict"
+
+        const breakpoint = window.matchMedia("(min-width:768px)")
+        let slider
+
+        const enableSwiper = function () {
+          slider = new Swiper(mobileSlider, {
+            modules: [Pagination, Autoplay],
+            observer: true,
+            observeParents: true,
+            slidesPerView: 1,
+            spaceBetween: 15,
+            autoHeight: true,
+
+            speed: 600,
+            loop: true,
+            // loopAdditionalSlides: 5,
+            // allowTouchMove: false,
+
+            pagination: {
+              el: ".text-block__items .pagination",
+              clickable: true,
+            },
+
+            autoplay: {
+              delay: 3000,
+              disableOnInteraction: false,
+            },
+          })
+        }
+
+        const breakpointChecker = function () {
+          if (breakpoint.matches === true) {
+            if (slider !== undefined) slider.destroy(true, true)
+
+            return
+          } else if (breakpoint.matches === false) {
+            return enableSwiper()
+          }
+        }
+
+        breakpoint.addListener(breakpointChecker)
+        breakpointChecker()
+      })()
+    }
   }
 }
 // Скролл на базі слайдера (за класом swiper scroll для оболонки слайдера)

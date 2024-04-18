@@ -2,6 +2,11 @@
 
 .hero {
   @include adaptiveValue("padding-bottom", 50, 30);
+
+  @media (min-width: $tablet) {
+    padding-top: toRem(130);
+  }
+
   &__container {
   }
 
@@ -10,17 +15,20 @@
     border-radius: 20px;
     overflow: hidden;
 
-    @include adaptiveValue("padding-top", 110, 70);
+    @include adaptiveValue("padding-bottom", 165, 30, 0, 1580, 991);
 
     @media (min-width: $tablet) {
-      @include adaptiveValue("padding-bottom", 195, 100);
+      @include adaptiveValue("padding-top", 110, 70);
     }
     @media (max-width: $tablet) {
-      padding-bottom: toRem(30);
-      min-height: toRem(400);
-
+      min-height: toRem(700);
+      @include adaptiveValue("padding-top", 110, 235, 0, 991, 375);
       display: flex;
       flex-direction: column;
+      margin-right: toRem(-15);
+      margin-left: toRem(-15);
+
+      border-radius: 0 0 10px 10px;
     }
     @media (max-width: $pc) {
       padding-left: toRem(15);
@@ -37,21 +45,21 @@
     z-index: -1;
   }
 
-  &__chank {
-    position: absolute;
-    width: 52.3%; /* 811/1550 */
-    height: 100%;
-    top: 2px;
-    left: 0;
+  // &__chank {
+  //   position: absolute;
+  //   width: 52.3%; /* 811/1550 */
+  //   height: 100%;
+  //   top: 2px;
+  //   left: 0;
 
-    img {
-      max-width: 100%;
-    }
+  //   img {
+  //     max-width: 100%;
+  //   }
 
-    @media (max-width: $pc) {
-      display: none;
-    }
-  }
+  //   @media (max-width: $pc) {
+  //     display: none;
+  //   }
+  // }
 
   &__title {
     font-family: "Benzin";
@@ -59,12 +67,17 @@
     @include adaptiveValue("font-size", 169, 40);
     line-height: 100%;
     color: #c3ff01;
-
+    opacity: 0;
+    user-select: none;
     @media (max-width: $pc) {
       margin-bottom: toRem(10);
     }
     @media (min-width: $pc) {
       margin-left: toRem(160);
+    }
+
+    @media (min-width: $mobile) {
+      margin-bottom: toRem(20);
     }
   }
 
@@ -77,18 +90,27 @@
       flex: 1 1 auto;
       display: flex;
       flex-direction: column;
+      align-items: flex-end;
     }
   }
 
   &__community {
     font-family: "Inter Tight";
     font-weight: 400;
-    @include adaptiveValue("font-size", 35, 20);
+    @include adaptiveValue("font-size", 35, 18);
     line-height: 120%;
     color: #fff;
 
+    @media (max-width: $tablet) {
+      text-align: right;
+    }
+
     &:not(:last-child) {
       margin-bottom: toRem(50);
+
+      @media (max-width: $tablet) {
+        margin-bottom: toRem(85);
+      }
     }
   }
 
@@ -96,20 +118,21 @@
     display: flex;
     gap: toRem(23);
 
-    @media (max-width: $tablet) {
-      margin-top: auto;
-    }
     @media (max-width: $mobile) {
       gap: toRem(10);
       flex-direction: column;
+      align-items: flex-end;
     }
   }
 
   &__button {
-    &.button-line {
-      @media (max-width: $mobile) {
-        // background-color: rgba(196, 255, 1, 0.6);
-        // color: #000;
+    @media (max-width: $tablet) {
+      background-color: #fff;
+      width: max-content;
+
+      &.button-line {
+        background-color: #c3ff01;
+        color: #000;
       }
     }
   }
@@ -195,23 +218,34 @@
   }
 
   &__items {
-    display: grid;
-    gap: toRem(20);
+  }
 
-    grid-template-columns: repeat(4, 1fr);
+  &__wrapper {
+    @media (min-width: $mobile) {
+      &.swiper-wrapper {
+        @media (min-width: $tablet) {
+          display: grid;
+          gap: toRem(20);
+          grid-template-columns: repeat(4, 1fr);
+        }
 
-    @media (max-width: $tablet) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @media (max-width: $mobile) {
-      grid-template-columns: 1fr;
+        @media (max-width: $tablet) and (min-width: $mobile) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
     }
   }
 
   &__item {
     font-weight: 400;
-    @include adaptiveValue("font-size", 25, 16);
+    @include adaptiveValue("font-size", 25, 18);
     line-height: 130%;
+
+    @media (max-width: $mobile) {
+      padding: toRem(20);
+      background-color: #c3ff01;
+      border-radius: 10px;
+    }
 
     @media (min-width: $mobile) {
       &:first-child {
@@ -232,6 +266,15 @@
       @include adaptiveValue("font-size", 18, 16);
     }
   }
+
+  &__pagination {
+    @media (min-width: $mobile) {
+      display: none;
+    }
+    @media (max-width: $mobile) {
+      margin-top: toRem(5);
+    }
+  }
 }
 
 //========================================================================================================================================================
@@ -239,6 +282,17 @@
 .cards {
   @include adaptiveValue("padding-top", 25, 20);
   @include adaptiveValue("padding-bottom", 75, 30);
+
+  &_pc {
+    @media (max-width: $tablet) {
+      display: none;
+    }
+  }
+  &_mob {
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
   &__container {
   }
 
@@ -246,29 +300,43 @@
     @media (max-width: $pc) and (min-width: em(1250)) {
       zoom: 0.8;
     }
+
+    &[data-iso-items] {
+      @media (max-width: $tablet) {
+        display: none;
+      }
+    }
+    @media (max-width: $tablet) {
+      display: grid;
+      @include adaptiveValue("gap", 20, 10, 0, 991, 375);
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &_mob {
+      @media (min-width: $tablet) {
+        display: none;
+      }
+    }
   }
 
   &__image-ibg {
-    width: 24%; /* 372/1550 */
-
-    @media (max-width: em(1250)) {
+    @media (min-width: em(1250)) {
+      width: 24%; /* 372/1550 */
+    }
+    @media (max-width: em(1250)) and (min-width: $tablet) {
       width: 32%;
-    }
-    @media (max-width: $tablet) {
-      width: calc(50% - 10px);
-    }
-    @media (max-width: $mobile) {
-      width: 100%;
-      height: toRem(350);
     }
     border-radius: 20px;
     overflow: hidden;
 
-    height: toRem(450);
     // padding-bottom: percent(450, 1550);
-    margin-bottom: toRem(20);
 
+    @media (max-width: $tablet) {
+      padding-bottom: 100%;
+    }
     @media (min-width: $tablet) {
+      height: toRem(450);
+      margin-bottom: toRem(20);
       &:nth-child(3) {
         margin-top: toRem(100);
       }
@@ -301,7 +369,7 @@
   }
 
   &__item {
-    @media (min-width: $mobile) {
+    @media (min-width: $tablet) {
       &:nth-child(2) {
         padding-top: toRem(50);
       }
@@ -309,21 +377,18 @@
   }
 }
 .item-cards {
-  //   height: fit-content;
-  width: 24%; /* 372/1550 */
-
-  @media (max-width: em(1250)) {
+  @media (min-width: em(1250)) {
+    width: 24%; /* 372/1550 */
+  }
+  @media (max-width: em(1250)) and (min-width: $tablet) {
     width: 32%;
   }
+  @media (min-width: $tablet) {
+    padding-bottom: toRem(20);
+  }
   @media (max-width: $tablet) {
-    width: 48%;
+    grid-column: span 2;
   }
-  @media (max-width: $mobile) {
-    width: 100%;
-  }
-
-  padding-bottom: toRem(20);
-  //   padding-bottom: toRem(20);
 
   &_line {
     .item-cards__wrapper {
@@ -333,10 +398,12 @@
 
   &__wrapper {
     padding: toRem(30) toRem(30) toRem(40);
-    height: toRem(450);
+
+    @media (min-width: $tablet) {
+      height: toRem(450);
+    }
 
     @media (max-width: $mobile) {
-      height: toRem(390);
       padding: toRem(20);
     }
 
@@ -346,11 +413,19 @@
     border: 1px solid #c3ff01;
     display: flex;
     flex-direction: column;
+
+    &.item-cards__wrapper_image {
+      @media (max-width: $tablet) {
+        flex-direction: row;
+        gap: toRem(10);
+      }
+    }
   }
 
   &__image {
-    width: toRem(150);
-
+    @include adaptiveValue("width", 150, 95);
+    @include adaptiveValue("flex-basis", 150, 95);
+    flex-shrink: 0;
     img {
       max-width: 100%;
     }
@@ -362,11 +437,10 @@
 
   &__num {
     font-weight: 700;
-    font-size: 40px;
+    @include adaptiveValue("font-size", 40, 30);
     line-height: 130%;
 
     &:not(:last-child) {
-      //   margin-bottom: toRem(85);
       margin-bottom: toRem(20);
     }
   }
@@ -374,11 +448,11 @@
   &__title {
     margin-top: auto;
     font-weight: 500;
-    font-size: 25px;
+    @include adaptiveValue("font-size", 25, 18);
     line-height: 130%;
 
     &:not(:last-child) {
-      margin-bottom: toRem(20);
+      @include adaptiveValue("margin-bottom", 20, 10);
     }
   }
 
@@ -400,7 +474,7 @@
 
   &__text {
     font-weight: 400;
-    font-size: toRem(16);
+    @include adaptiveValue("font-size", 16, 14);
     line-height: 130%;
 
     &:not(:last-child) {
@@ -558,10 +632,18 @@
     &:nth-child(1) {
       transform: rotate(-10deg);
       z-index: 1;
+
+      @media (max-width: $mobile) {
+        transform: rotate(-10deg) translateY(20px);
+      }
     }
     &:nth-child(2) {
       transform: rotate(4deg);
       z-index: 2;
+
+      @media (max-width: $mobile) {
+        transform: rotate(4deg) translateY(-20px);
+      }
     }
   }
 
@@ -572,7 +654,7 @@
 
   &__slide {
     font-weight: 500;
-    @include adaptiveValue("font-size", 40, 17);
+    @include adaptiveValue("font-size", 40, 10);
     line-height: 100%;
     white-space: nowrap;
 
@@ -590,60 +672,103 @@
   }
 
   &__body {
-    display: grid;
-    gap: toRem(20);
-    grid-template-columns: repeat(2, 1fr);
+  }
+  .tabs__content {
+    @media (min-width: $tablet) {
+      // display: grid;
+      // gap: toRem(20);
+      // grid-template-columns: repeat(2, 1fr);
 
+      display: flex;
+      flex-direction: row-reverse;
+      gap: toRem(20);
+    }
+  }
+
+  .tabs__navigation {
+    @media (min-width: $tablet) {
+      display: none;
+    }
     @media (max-width: $tablet) {
-      grid-template-columns: 1fr;
+      margin-bottom: toRem(35);
+    }
+  }
+  .tabs__body {
+    @media (min-width: $tablet) {
+      display: grid;
+      flex: 0 0 calc(50% - 10px);
     }
   }
 
   &__map {
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
     iframe {
       width: 100%;
       height: 100%;
+
+      @media (min-width: $tablet) {
+        min-height: toRem(580);
+      }
+      @media (max-width: $tablet) {
+        min-height: toRem(400);
+      }
     }
 
     & > div {
+      // flex: 1 1 auto;
       width: 100%;
       height: 100%;
-    }
-
-    @media (max-width: $tablet) {
-      min-height: toRem(400);
     }
   }
 
   &__items {
     @media (min-width: $tablet) {
-      margin: toRem(50) 0;
-      padding-right: toRem(50);
+      padding-right: toRem(45);
+      max-height: toRem(470);
+      overflow: auto;
     }
+    @extend %scrollbar;
     @media (max-width: $tablet) {
       padding-right: toRem(20);
     }
-    max-height: toRem(480);
-    @media (max-width: $mobile) {
-      max-height: toRem(320);
-    }
-    overflow: auto;
-    @extend %scrollbar;
   }
 
   &__item {
   }
+  &__more {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: toRem(20);
+
+    @media (min-width: $tablet) {
+      display: none;
+    }
+  }
 }
 .item-location {
   padding: toRem(10) 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 1px;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
   &__line {
     display: flex;
     gap: toRem(10);
     align-items: center;
 
     font-weight: 400;
-    @include adaptiveValue("font-size", 18, 16);
+    @include adaptiveValue("font-size", 18, 14);
     line-height: 130%;
 
     transition: all 0.3s ease 0s;
@@ -668,6 +793,11 @@
 
       font-size: toRem(20);
       color: #c3ff01;
+
+      @media (max-width: $mobile) {
+        flex: 0 0 toRem(15);
+        font-size: toRem(14);
+      }
     }
   }
 }
