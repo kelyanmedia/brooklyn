@@ -844,7 +844,12 @@
   }
 
   &__item {
+    border-radius: toRem(10);
+    overflow: hidden;
+    border: 1px solid #000000;
     img {
+      border-radius: toRem(10);
+      overflow: hidden;
       max-width: 100%;
     }
   }
