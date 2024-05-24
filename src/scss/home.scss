@@ -90,7 +90,7 @@
     // opacity: 0;
     user-select: none;
     text-align: center;
-    @include adaptiveValue("margin-bottom", 85, 15);
+    @include adaptiveValue("margin-bottom", 85, 30);
   }
 
   &__body {
