@@ -158,6 +158,13 @@
         color: #000;
       }
     }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff;
+        color: #000;
+      }
+    }
   }
 }
 
