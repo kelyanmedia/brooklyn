@@ -154,6 +154,16 @@ body::after {
   &.popup_show {
     background-color: rgba(255, 255, 255, 0.8);
   }
+
+  .popup__content {
+    @media (min-width: em(1100)) {
+      background-image: url("@img/popup/bottle.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-color: transparent;
+    }
+  }
+
   &__title {
     font-family: Benzin;
     font-weight: 400;
@@ -167,10 +177,27 @@ body::after {
     align-items: center;
     text-align: center;
     gap: 0;
-    background-color: #fff;
+
+    @media (max-width: em(1100)) {
+      background-color: #fff;
+    }
+
+    @media (min-width: em(1210)) {
+      width: 60%;
+    }
+    @media (max-width: em(1210)) and (min-width: em(1100)) {
+      width: 70%;
+    }
+
+    @media (min-width: em(1100)) {
+      @include adaptiveValue("padding-top", 20, 40);
+      @include adaptiveValue("padding-bottom", 30, 40);
+      padding-left: toRem(30);
+      padding-right: toRem(30);
+    }
   }
   .popup__text {
-    @include adaptiveValue("margin-bottom", 40, 30);
+    @include adaptiveValue("margin-bottom", 30, 20);
     max-width: toRem(1100);
   }
 
@@ -181,5 +208,13 @@ body::after {
   &__button {
     color: #c3ff01;
     min-width: toRem(300);
+  }
+
+  &__groop {
+    @media (min-width: em(1100)) {
+      background-color: #fff;
+      padding: toRem(20);
+      border-radius: toRem(10);
+    }
   }
 }

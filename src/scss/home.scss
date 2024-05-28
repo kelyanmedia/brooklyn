@@ -81,7 +81,7 @@
   // }
 
   &__title {
-    opacity: 0;
+    // opacity: 0;
     font-family: "Benzin";
     font-weight: 400;
     @include adaptiveValue("font-size", 169, 40);
@@ -111,8 +111,7 @@
     font-weight: 400;
     @include adaptiveValue("font-size", 35, 18);
     line-height: 120%;
-    color: #000;
-
+    color: #fff;
     @media (max-width: $tablet) {
       text-align: right;
     }
@@ -138,18 +137,26 @@
   }
 
   &__button {
+    @include adaptiveValue("width", 200, 100);
+    @include adaptiveValue("height", 200, 100);
+    border-radius: 50%;
+    padding: toRem(5);
+    text-align: center;
+    @include adaptiveValue("font-size", 17, 16);
+    color: #000;
+
+    &.button-line {
+      color: #c3ff01;
+    }
     @media (max-width: $tablet) {
       background-color: #000;
-      color: #fff;
-      width: max-content;
+      color: #c3ff01;
+      border: 1px solid #c3ff01;
 
       &.button-line {
         background-color: #c3ff01;
         color: #000;
       }
-    }
-    &.button-line {
-      color: #000;
     }
   }
 }
