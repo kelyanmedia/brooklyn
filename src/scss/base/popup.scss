@@ -162,7 +162,7 @@ body::after {
     background-color: transparent;
     background-position: center;
     @media (max-width: $mobile) {
-      background-image: url("@img/popup/bottle-mob.svg");
+      background-image: url("@img/popup/bottle-mob.png");
     }
   }
 
