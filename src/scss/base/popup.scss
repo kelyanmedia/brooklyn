@@ -156,11 +156,13 @@ body::after {
   }
 
   .popup__content {
-    @media (min-width: em(1100)) {
-      background-image: url("@img/popup/bottle.png");
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-color: transparent;
+    background-image: url("@img/popup/bottle.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    background-position: center;
+    @media (max-width: $mobile) {
+      background-image: url("@img/popup/bottle-mob.svg");
     }
   }
 
@@ -178,8 +180,10 @@ body::after {
     text-align: center;
     gap: 0;
 
-    @media (max-width: em(1100)) {
-      background-color: #fff;
+    @media (max-width: $mobile) {
+      // background-color: #fff;
+      @include adaptiveValue("padding-top", 300, 250, 0, 767, 375);
+      @include adaptiveValue("padding-bottom", 300, 250, 0, 767, 375);
     }
 
     @media (min-width: em(1210)) {
@@ -188,6 +192,9 @@ body::after {
     @media (max-width: em(1210)) and (min-width: em(1100)) {
       width: 70%;
     }
+    @media (min-width: $mobile) {
+      width: 80%;
+    }
 
     @media (min-width: em(1100)) {
       @include adaptiveValue("padding-top", 20, 40);
@@ -195,15 +202,26 @@ body::after {
       padding-left: toRem(30);
       padding-right: toRem(30);
     }
+    @media (min-width: em(1210)) {
+      // margin-left: 6%;
+    }
   }
   .popup__text {
     @include adaptiveValue("margin-bottom", 30, 20);
     max-width: toRem(1100);
+
+    @media (max-width: em(1100)) {
+      display: none;
+    }
   }
 
   .popup__title {
     max-width: none;
     @include adaptiveValue("margin-bottom", 30, 20);
+
+    @media (max-width: em(1100)) {
+      display: none;
+    }
   }
   &__button {
     color: #c3ff01;
